@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Remera actualizada",
+    "description": "Pantalón de jean",
+    "price": 390,
+    "thumbnail": "./img/p001.jpeg",
+    "code": "PAN001",
+    "stock": 10,
+    "id": "5710b967-f09b-4ead-a115-27246c769cad"
+  },
+  {
+    "title": "Remera",
+    "description": "Remera de algodón",
+    "price": 20,
+    "thumbnail": "./img/cam001.jpg",
+    "code": "CAM001",
+    "stock": 10,
+    "id": "a075a2e4-4398-42ba-aace-0f10f5456081"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianLammenda/backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DamianLammenda/backend/issues"
+  },
+  "homepage": "https://github.com/DamianLammenda/backend#readme",
+  "description": ""
+}
