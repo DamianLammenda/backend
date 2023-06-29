@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "uuid": "^9.0.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DamianLammenda/backend.git"
@@ -22,5 +24,8 @@
     "url": "https://github.com/DamianLammenda/backend/issues"
   },
   "homepage": "https://github.com/DamianLammenda/backend#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }

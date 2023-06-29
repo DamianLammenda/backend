@@ -16,5 +16,23 @@
     "code": "CAM001",
     "stock": 10,
     "id": "a075a2e4-4398-42ba-aace-0f10f5456081"
+  },
+  {
+    "title": "Zapatillas",
+    "description": "Zapatillas de lona",
+    "price": 40,
+    "thumbnail": "./img/z001.jpg",
+    "code": "ZAP001",
+    "stock": 10,
+    "id": "3fb70ab7-7337-4ee9-9a95-c355748077fa"
+  },
+  {
+    "title": "Remera 523",
+    "description": "Remera de prueba",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LA01",
+    "stock": 50,
+    "id": "264facb1-0998-4d40-afe4-ba29247fa47b"
   }
 ]
