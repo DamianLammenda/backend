@@ -1,14 +1,5 @@
 [
   {
-    "title": "Remera actualizada",
-    "description": "Pantalón de jean",
-    "price": 390,
-    "thumbnail": "./img/p001.jpeg",
-    "code": "PAN001",
-    "stock": 10,
-    "id": "5710b967-f09b-4ead-a115-27246c769cad"
-  },
-  {
     "title": "Remera",
     "description": "Remera de algodón",
     "price": 20,
@@ -23,16 +14,43 @@
     "price": 40,
     "thumbnail": "./img/z001.jpg",
     "code": "ZAP001",
-    "stock": 10,
+    "stock": 50,
     "id": "3fb70ab7-7337-4ee9-9a95-c355748077fa"
   },
   {
-    "title": "Remera 523",
-    "description": "Remera de prueba",
+    "title": "test",
+    "description": "test de prueba",
     "price": 70,
     "thumbnail": "./img/pam001.jpg",
-    "code": "LA01",
+    "code": "LF01",
     "stock": 50,
-    "id": "264facb1-0998-4d40-afe4-ba29247fa47b"
+    "id": "787e3309-2a11-4797-bf0f-8b507076e0d5"
+  },
+  {
+    "title": "test12",
+    "description": "test de prueba112",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LF0112",
+    "stock": 8,
+    "id": "ebf013b2-8169-4f3a-99eb-49a472ee5a7f"
+  },
+  {
+    "title": "test102",
+    "description": "test de prueba112",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LF01102",
+    "stock": 80,
+    "id": "9da762cf-6744-4b3c-a86d-9b298f8962dc"
+  },
+  {
+    "title": "Zapatillas nuevas",
+    "description": "Zapatillas nuevas",
+    "price": 55,
+    "thumbnail": "./img/z001.jpg",
+    "code": "ZAP002",
+    "stock": 12,
+    "id": "198d3840-55ba-40d8-bf99-0e23485fd31f"
   }
 ]
