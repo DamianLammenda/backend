@@ -52,5 +52,14 @@
     "code": "ZAP002",
     "stock": 12,
     "id": "198d3840-55ba-40d8-bf99-0e23485fd31f"
+  },
+  {
+    "title": "prueba 6888",
+    "description": "Remera de algodón",
+    "price": 20,
+    "thumbnail": "./img/cam001.jpg",
+    "code": "CAM007",
+    "stock": 100,
+    "id": "eb839411-cf7e-43e7-a6aa-0fd17fff062e"
   }
 ]
