@@ -84,9 +84,9 @@ class ProductManager {
       return;
     }
 
-    const deletedProduct = this.products.splice(productIndex, 1)[0];
+    this.products.splice(productIndex, 1)[0];
     this.saveProducts(); // Guardar los productos actualizados en el archivo
-    console.log("Producto eliminado:", deletedProduct);
+    console.log("Producto eliminado:");
   }
 
   getProducts() {
