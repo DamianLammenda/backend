@@ -1,10 +1,11 @@
 import express from 'express';
-import { v4 as uuidv4 } from 'uuid';
 import CartManager from '../services/cart/cartManager.js';
+import ProductManager from '../services/product/productManager.js';
 
 const router = express.Router();
 
 const cartManager = new CartManager('./src/services/cart/cart.json');
+const productManager = new ProductManager('./src/services/product/product.json');
 
 
 // Ruta para crear un carrito
@@ -24,49 +25,48 @@ router.post('/', (req, res) => {
 
 
 // Ruta para obtener el contenido del carrito
-router.get('/:cartId', (req, res) => {
-  const { cartId } = req.params;
+router.get('/:cid', (req, res) => {
+  const { cid } = req.params;
 
-  if (!cartManager.carts[cartId]) {
+  if (!cartManager.carts[cid]) {
     return res.status(404).json({ error: 'El carrito no existe.' });
   }
 
-  const cart = cartManager.getCart(cartId);
+  const cart = cartManager.getCart(cid);
   res.status(200).json(cart);
 });
 
 // Ruta para agregar un producto al carrito
-router.post('/:cartId', (req, res) => {
-  const { cartId } = req.params;
-  const { productId } = req.body;
+router.post('/:cid/products/:pid', (req, res) => {
+  const { cid, pid } = req.params;
+  const { quantity } = req.body;
 
-  if (!cartManager.carts[cartId]) {
+  if (!cartManager.carts[cid]) {
     return res.status(404).json({ error: 'El carrito no existe.' });
   }
 
-  const product = productManager.getProductById(productId);
-
-  if (!product) {
+  if (!productManager.products[pid]) {
     return res.status(404).json({ error: 'El producto no existe.' });
   }
 
-  const cart = cartManager.carts[cartId];
-  cart.push({ id: uuidv4(), ...product });
-  cartManager.saveCarts();
-
+  cartManager.addToCart(cid, pid, quantity);
   res.status(201).json({ message: 'Producto agregado al carrito.' });
 });
 
-// Ruta para eliminar un producto del carrito
-router.delete('/:cartId/:productId', (req, res) => {
-  const { cartId, productId } = req.params;
 
-  if (!cartManager.carts[cartId]) {
+
+ 
+
+// Ruta para eliminar un producto del carrito
+router.delete('/:cid/:pid', (req, res) => {
+  const { cid, pid } = req.params;
+
+  if (!cartManager.carts[cid]) {
     return res.status(404).json({ error: 'El carrito no existe.' });
   }
 
-  const cart = cartManager.carts[cartId];
-  const productIndex = cart.findIndex((p) => p.id === productId);
+  const cart = cartManager.carts[cid];
+  const productIndex = cart.findIndex((p) => p.id === pid);
 
   if (productIndex === -1) {
     return res.status(404).json({ error: 'El producto no existe en el carrito.' });
@@ -79,14 +79,14 @@ router.delete('/:cartId/:productId', (req, res) => {
 });
 
 // Ruta para vaciar el carrito
-router.delete('/:cartId', (req, res) => {
-  const { cartId } = req.params;
+router.delete('/:cid', (req, res) => {
+  const { cid } = req.params;
 
-  if (!cartManager.carts[cartId]) {
+  if (!cartManager.carts[cid]) {
     return res.status(404).json({ error: 'El carrito no existe.' });
   }
 
-  cartManager.emptyCart(cartId);
+  cartManager.emptyCart(cid);
   res.status(200).json({ message: 'Carrito vaciado.' });
 });
 

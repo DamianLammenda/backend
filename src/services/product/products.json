@@ -61,5 +61,23 @@
     "code": "CAM007",
     "stock": 100,
     "id": "eb839411-cf7e-43e7-a6aa-0fd17fff062e"
+  },
+  {
+    "title": "test9888",
+    "description": "test de prueba72",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LF01812",
+    "stock": 80,
+    "id": "0848ede3-3b22-4390-8d8d-2ed3d385a0f8"
+  },
+  {
+    "title": "test9",
+    "description": "test de prueba7",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LF0182",
+    "stock": 800,
+    "id": "12cd2bd9-77c4-407f-a088-83c93397ebac"
   }
 ]
