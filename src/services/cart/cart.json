@@ -1,3 +1,35 @@
 {
-  "0eb350c5-41e6-456c-9ab1-ffa8b36b69e7": []
+  "0eb350c5-41e6-456c-9ab1-ffa8b36b69e7": [],
+  "9101ece0-5a5e-4d26-8770-e09ecc4cc28d": [
+    {
+      "title": "prueba 6888",
+      "description": "Remera de algodón",
+      "price": 20,
+      "thumbnail": "./img/cam001.jpg",
+      "code": "CAM007",
+      "stock": 100,
+      "id": "eb839411-cf7e-43e7-a6aa-0fd17fff062e",
+      "quantity": 13
+    },
+    {
+      "title": "test9",
+      "description": "test de prueba7",
+      "price": 70,
+      "thumbnail": "./img/pam001.jpg",
+      "code": "LF0182",
+      "stock": 800,
+      "id": "12cd2bd9-77c4-407f-a088-83c93397ebac",
+      "quantity": 3
+    },
+    {
+      "title": "Zapatillas nuevas",
+      "description": "Zapatillas nuevas",
+      "price": 55,
+      "thumbnail": "./img/z001.jpg",
+      "code": "ZAP002",
+      "stock": 12,
+      "id": "198d3840-55ba-40d8-bf99-0e23485fd31f",
+      "quantity": 7
+    }
+  ]
 }

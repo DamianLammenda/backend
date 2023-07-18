@@ -5,7 +5,7 @@ import ProductManager from '../services/product/productManager.js';
 const router = express.Router();
 
 const cartManager = new CartManager('./src/services/cart/cart.json');
-const productManager = new ProductManager('./src/services/product/product.json');
+const productManager = new ProductManager('./src/services/product/products.json');
 
 
 // Ruta para crear un carrito
@@ -45,7 +45,7 @@ router.post('/:cid/products/:pid', (req, res) => {
     return res.status(404).json({ error: 'El carrito no existe.' });
   }
 
-  if (!productManager.products[pid]) {
+  if (!productManager.getProductById(pid)) {
     return res.status(404).json({ error: 'El producto no existe.' });
   }
 

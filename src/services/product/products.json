@@ -79,5 +79,14 @@
     "code": "LF0182",
     "stock": 800,
     "id": "12cd2bd9-77c4-407f-a088-83c93397ebac"
+  },
+  {
+    "title": "test90",
+    "description": "test de prueba70",
+    "price": 70,
+    "thumbnail": "./img/pam001.jpg",
+    "code": "LF01820",
+    "stock": 412,
+    "id": "32872e8a-ffa0-4a2a-91e6-5773858c3190"
   }
 ]
