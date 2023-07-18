@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import productManager from "../product/productManager.js";
 
 const CART_FILE_PATH = "./src/services/cart/cart.json";
+const ProductManager = new productManager("./src/services/product/products.json");
 
 class CartManager {
   constructor() {
@@ -38,7 +39,8 @@ class CartManager {
     if (!this.carts[cartId]) {
       throw new Error("El carrito no existe.");
     }
-    const product = new productManager().getProductById(productId);
+    const product = ProductManager.getProductById(productId);
+    
     if (!product) {
       throw new Error("El producto no existe.");
     }
@@ -52,7 +54,7 @@ class CartManager {
     } else {
       cart[productIndex].quantity += quantity;
     }
-    this.saveCarts(); // Guardar los carritos actualizados en el archivo
+    this.saveCarts(); 
   }
 
 
