@@ -1,48 +1,74 @@
 <div>
-    <h1>Real Time products</h1>
-    <div class="real-time-form">
-        <form id="formProducts" method="post" action="/realtimeproducts">
-            <label for="productTitle">Titulo:</label>
-            <input type="text" placeholder="Titulo del producto" name="title" id="productTitle" />
-            <label for="productDescription">Descripcion:</label>
-            <textarea type="text" rows="10" placeholder="Descripcion del producto" name="description"
-                id="productDescription"></textarea>
-            <label for="productCategory">Categoría producto: </label>
-            <input type="text" placeholder="Categoría del producto" name="category" id="productCategory">
-            <label for="productPrice">Precio: </label>
-            <input type="number" placeholder="Precio del producto" name="price" id="productPrice">
-            <label for="productCode">Codigo Producto</label>
-            <input type="text" placeholder="Codigo del producto" name="code" id="productCode">
-            <label for="productStock">Stock:</label>
-            <input type="number" placeholder="cantidad en stock" name="stock" id="productStock">
-            <label for="productThumbnails">Imagenes:</label>
-            <input type="text" placeholder="URL de la imagen" name="thumbnails" id="productThumbnails">
-            <button type="submit">Agregar</button>
-        </form>
-    </div>
-    <div class="list">
-        <ul id="productsList">
-            {{#each products}}
-            <li>
-                <div class="info">
-                    <h2>
-                        {{this.title}}
-                    </h2>
-                    <div class="description-category">
-                        <p><span>Description:</span> {{this.description}}</p>
-                        <p><span>Category:</span> {{this.category}}</p>
-                    </div>
-                    <div class="price-stock">
-                        <p><span>Price:</span> ${{this.price}}</p>
-                        <p><span>Stock:</span> {{this.stock}}</p>
-                    </div>
-                </div>
-                <img src={{this.thumbnails}} alt={{this.title}}>
-                <button class="deleteButton" id={{this.id}}>Eliminar</button>
+  <h1>Real Time products</h1>
 
-            </li>
-            {{/each}}
-        </ul>
-    </div>
+  <div>
+    <form id="formProducts" method="POST" action="/realTimeProducts">
+      <input
+        type="text"
+        name="title"
+        placeholder="Nombre del producto"
+        required
+      />
+      <input
+        type="text"
+        name="description"
+        placeholder="Descripción del producto"
+        required
+      />
+      <input
+        type="number"
+        name="price"
+        placeholder="Precio del producto"
+        required
+      />
+      <input
+        type="number"
+        name="stock"
+        placeholder="Stock del producto"
+        required
+      />
+      <input
+        type="text"
+        name="thumbnail"
+        placeholder="Imagen del producto"
+        required
+      />
+      <input type="submit" value="Enviar producto" />
+
+    </form>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.stock}}</td>
+          <td><img
+              src={{this.thumbnail}}
+              class="img-thumbnail"
+              alt="thumbnail"
+            /></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" onclick="{goProducts()}">Go Back</button>
+
 </div>
 <script src="/socket.io/socket.io.js"></script>
+<script src="../../public/js/index.js"></script>
+<script>
+  function goProducts() { window.location.href = '/'; }
+</script>

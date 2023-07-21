@@ -1,25 +1,36 @@
-<div>
-    <h1 class="title">Lista de productos.</h1>
-    <div class="list">
-        <ul>
-            {{#each products}}
-            <li>
-                <div class="info">
-                    <h2>
-                        {{this.title}}
-                    </h2>
-                    <div class="description-category">
-                        <p><span>Description:</span> {{this.description}}</p>
-                        <p><span>Category:</span> {{this.category}}</p>
-                    </div>
-                    <div class="price-stock">
-                        <p><span>Price:</span> ${{this.price}}</p>
-                        <p><span>Stock:</span> {{this.stock}}</p>
-                    </div>
-                </div>
-                <img src={{this.thumbnails}} alt={{this.title}}>
-            </li>
-            {{/each}}
-        </ul>
-    </div>
-</div>
+<title>Lista de Productos</title>
+
+<body>
+  <h1>Lista de Productos</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+        <tr>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.stock}}</td>
+          <td><img
+              src={{this.thumbnail}}
+              class="img-thumbnail"
+              alt="thumbnail"
+            /></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button class="btn btn-primary" onclick="{goProducts()}">Go realTimeProducts</button>
+
+</body>
+<script>
+  function goProducts() { window.location.href = '/realTimeProducts'; }
+</script>
