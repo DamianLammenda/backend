@@ -15,4 +15,16 @@ router.get("/", (_req, res) => {
   }
 });
 
+router.post("/", (req, res) => {
+  try {
+    const product = req.body;
+    productManager.addProduct(product);
+    console.log("Producto agregado:", product);
+    res.redirect("/realTimeProducts");
+
+  } catch (error) {
+    res.status(500).send({success: false, error: error.message});
+  }
+});
+
 export default router;
