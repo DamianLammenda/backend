@@ -33,7 +33,7 @@
         placeholder="Imagen del producto"
         required
       />
-      <input type="submit" value="Enviar producto" />
+      <button type="submit" onclick="{sucess()}" >Agregar</button>
 
     </form>
   </div>
@@ -48,6 +48,7 @@
       </tr>
     </thead>
     <tbody>
+      
       {{#each products}}
         <tr>
           <td>{{this.title}}</td>
@@ -72,3 +73,11 @@
 <script>
   function goProducts() { window.location.href = '/'; }
 </script>
+<script>
+        function sucess() {
+          
+          {
+            alert("Product added successfully");
+          }
+        }
+      </script>
